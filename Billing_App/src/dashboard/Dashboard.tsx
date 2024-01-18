@@ -1,11 +1,32 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import arrowIcon from '../assets/left-arrow.png'
 import homeIcon from '../assets/logo.png'
 import travelIcon from '../assets/Chart.png'
 import drillIcon from '../assets/Folder.png'
 import Table from '../components/Table'
+import axios from 'axios'
 
 const Dashboard = () => {
+
+    useEffect(() => {
+
+        const fetchData = async () => {
+            try {
+                const response = await axios.get('http://localhost:8000/');
+                console.log(response.data);
+
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
+        fetchData()
+    }, [])
+
+
+
+
+
     const [open, setOpen] = useState(true);
     const Menus = [
         { title: "Dashboard", src: drillIcon },
