@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from './LoginPage/Login'
-import DashBoard from './dashboard/index.js'
+import DashBoard from './dashboard/Dashboard.js'
 import SignUp from "./SignUp/SignUp.js";
 import axios from 'axios';
 
@@ -14,7 +14,8 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />} />
+        {/* <Route path="/" element={<Login />} /> */}
+        <Route path="/" element={<DashBoard />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/dashboard" element={<DashBoard />} />
